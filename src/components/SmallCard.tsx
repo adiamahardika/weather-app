@@ -1,16 +1,6 @@
 interface SmallCardProps {
   dayTitle: string;
-  img:
-    | "Clear"
-    | "Hail"
-    | "HeavyCloud"
-    | "HeavyRain"
-    | "LightCloud"
-    | "LightRain"
-    | "Shower"
-    | "Sleet"
-    | "Snow"
-    | "Thunderstorm";
+  icon: string;
   min: number;
   max: number;
   temp: string;
@@ -18,7 +8,7 @@ interface SmallCardProps {
 
 const SmallCard: React.FC<SmallCardProps> = ({
   dayTitle,
-  img,
+  icon,
   min,
   max,
   temp,
@@ -26,7 +16,7 @@ const SmallCard: React.FC<SmallCardProps> = ({
   return (
     <div className="bg-darkblue py-4 px-5 flex flex-col items-center space-y-4">
       <p>{dayTitle}</p>
-      <img src={`/images/${img}.png`} alt="weather-icon" className="max-h-16" />
+      <img src={`/icons/${icon}.svg`} alt="weather-icon" className="max-h-16" />
       <div className="flex justify-between space-x-5">
         <p>
           {max}&deg;{temp}
