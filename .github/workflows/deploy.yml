@@ -27,7 +27,9 @@ jobs:
       - name: Upload Build to AWS S3
         uses: jakejarvis/s3-sync-action@v0.5.1
         with:
-          args: build/ s3://$AWS_S3_BUCKET/ --acl public-read --delete
+          source: ./build/
+          destination: s3://$AWS_S3_BUCKET/
+          args: --acl public-read --delete
         env:
           AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
           working-directory: ./build
