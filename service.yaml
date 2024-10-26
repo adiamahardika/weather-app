@@ -4,7 +4,7 @@ metadata:
   name: weather-app-service
 spec:
   selector:
-    app: react-app-4
+    app: react-app
   ports:
     - protocol: TCP
       port: 80
